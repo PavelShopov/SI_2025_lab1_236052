@@ -107,10 +107,27 @@ class TaskManager {
         return filteredTasks;
     }
 
+    public List<Task> filterByPriority(Priority priority) {
+        // TODO: Implement filtering logic
+        ArrayList<Task> filteredTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.getPriority().equals(priority)) {
+                filteredTasks.add(task);
+            }
+        }
+        return filteredTasks;
+    }
+
     // 6. Find the highest-priority unfinished task
     public List<Task> getMostUrgentTasks() {
         // TODO: Implement logic to find most urgent tasks
-        return new ArrayList<>();
+        Priority p = Priority.LOW;
+        for (Task task : tasks) {
+            if (task.getPriority()> p) {
+                p = task.getPriority();
+            }
+        }
+        return filterByPriority(p);
     }
 
     // 7. Count tasks per category
