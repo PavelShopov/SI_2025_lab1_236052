@@ -64,13 +64,11 @@ class TaskManager {
 
     // 1. Remove a task by name
     public void removeTask(String name) {
-        // TODO: Implement removal logic
         tasks.removeIf(task -> task.getName().equals(name));
     }
 
     // 2. Find all completed tasks
     public List<Task> getCompletedTasks() {
-        // TODO: Implement logic to return completed tasks
         List<Task> completedTasks = new ArrayList<>();
         for (Task task : tasks) {
             if (task.isCompleted()) {
@@ -82,22 +80,16 @@ class TaskManager {
 
     // 3. List tasks sorted by name
     public void sortTasksByName() {
-        // TODO: Implement sorting logic
         tasks.sort(Comparator.comparingInt(task -> Integer.parseInt(task.getName().substring(0, 1))));
     }
 
-    // Function to print an array
-
-
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
-        // TODO: Implement sorting by priority logic
         tasks.sort(Comparator.comparingInt(task -> task.getPriority()));
     }
 
     // 5. Filter tasks by category
     public List<Task> filterByCategory(String category) {
-        // TODO: Implement filtering logic
         ArrayList<Task> filteredTasks = new ArrayList<>();
         for (Task task : tasks) {
             if (task.getCategory().equals(category)) {
@@ -108,7 +100,6 @@ class TaskManager {
     }
 
     public List<Task> filterByPriority(Priority priority) {
-        // TODO: Implement filtering logic
         ArrayList<Task> filteredTasks = new ArrayList<>();
         for (Task task : tasks) {
             if (task.getPriority().equals(priority)) {
@@ -120,7 +111,6 @@ class TaskManager {
 
     // 6. Find the highest-priority unfinished task
     public List<Task> getMostUrgentTasks() {
-        // TODO: Implement logic to find most urgent tasks
         Priority p = Priority.LOW;
         for (Task task : tasks) {
             if (task.getPriority() > p) {
@@ -132,7 +122,6 @@ class TaskManager {
 
     // 7. Count tasks per category
     public Map<String, Integer> countTasksPerCategory() {
-        // TODO: Implement counting logic
         HashMap<String, Integer> tasksPerCategory = new HashMap<>();
         for (Task task : tasks) {
             String category = task.getCategory();
@@ -148,7 +137,6 @@ class TaskManager {
 
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
-        // TODO: Implement completion logic
         for (Task task : tasks) {
             if (task.getName().equals(name)) {
                 task.isCompleted()
@@ -159,7 +147,6 @@ class TaskManager {
 
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
-        // TODO: Implement bulk completion logic
         for (Task task : tasks) {
             if (task.getCategory().equals(category)) {
                 task.isCompleted()
