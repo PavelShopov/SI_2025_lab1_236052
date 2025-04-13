@@ -64,94 +64,51 @@ class TaskManager {
 
     // 1. Remove a task by name
     public void removeTask(String name) {
-        tasks.removeIf(task -> task.getName().equals(name));
+        // TODO: Implement removal logic
     }
 
     // 2. Find all completed tasks
     public List<Task> getCompletedTasks() {
-        List<Task> completedTasks = new ArrayList<>();
-        for (Task task : tasks) {
-            if (task.isCompleted()) {
-                completedTasks.add(task);
-            }
-        }
-        return completedTasks;
+        // TODO: Implement logic to return completed tasks
+        return new ArrayList<>();
     }
 
     // 3. List tasks sorted by name
     public void sortTasksByName() {
-        tasks.sort(Comparator.comparingInt(task -> Integer.parseInt(task.getName().substring(0, 1))));
+        // TODO: Implement sorting logic
     }
 
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
-        tasks.sort(Comparator.comparingInt(task -> task.getPriority()));
+        // TODO: Implement sorting by priority logic
     }
 
     // 5. Filter tasks by category
     public List<Task> filterByCategory(String category) {
-        ArrayList<Task> filteredTasks = new ArrayList<>();
-        for (Task task : tasks) {
-            if (task.getCategory().equals(category)) {
-                filteredTasks.add(task);
-            }
-        }
-        return filteredTasks;
-    }
-
-    public List<Task> filterByPriority(Priority priority) {
-        ArrayList<Task> filteredTasks = new ArrayList<>();
-        for (Task task : tasks) {
-            if (task.getPriority().equals(priority)) {
-                filteredTasks.add(task);
-            }
-        }
-        return filteredTasks;
+        // TODO: Implement filtering logic
+        return new ArrayList<>();
     }
 
     // 6. Find the highest-priority unfinished task
     public List<Task> getMostUrgentTasks() {
-        Priority p = Priority.LOW;
-        for (Task task : tasks) {
-            if (task.getPriority() > p) {
-                p = task.getPriority();
-            }
-        }
-        return filterByPriority(p);
+        // TODO: Implement logic to find most urgent tasks
+        return new ArrayList<>();
     }
 
     // 7. Count tasks per category
     public Map<String, Integer> countTasksPerCategory() {
-        HashMap<String, Integer> tasksPerCategory = new HashMap<>();
-        for (Task task : tasks) {
-            String category = task.getCategory();
-            if(tasksPerCategory.containsKey(category)) {
-                tasksPerCategory.put(category, tasksPerCategory.get(category) + 1);
-            }
-            else {
-                tasksPerCategory.put(category, 1);
-            }
-        }
-        return tasksPerCategory;
+        // TODO: Implement counting logic
+        return new HashMap<>();
     }
 
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
-        for (Task task : tasks) {
-            if (task.getName().equals(name)) {
-                task.isCompleted()
-                break;
-            }
-        }
+        // TODO: Implement completion logic
     }
 
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
-        for (Task task : tasks) {
-            if (task.getCategory().equals(category)) {
-                task.isCompleted()
-            }
-        }
+        // TODO: Implement bulk completion logic
     }
 }
 
