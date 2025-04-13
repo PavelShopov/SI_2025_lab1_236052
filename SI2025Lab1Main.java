@@ -123,7 +123,7 @@ class TaskManager {
         // TODO: Implement logic to find most urgent tasks
         Priority p = Priority.LOW;
         for (Task task : tasks) {
-            if (task.getPriority()> p) {
+            if (task.getPriority() > p) {
                 p = task.getPriority();
             }
         }
@@ -133,17 +133,38 @@ class TaskManager {
     // 7. Count tasks per category
     public Map<String, Integer> countTasksPerCategory() {
         // TODO: Implement counting logic
-        return new HashMap<>();
+        HashMap<String, Integer> tasksPerCategory = new HashMap<>();
+        for (Task task : tasks) {
+            String category = task.getCategory();
+            if(tasksPerCategory.containsKey(category)) {
+                tasksPerCategory.put(category, tasksPerCategory.get(category) + 1);
+            }
+            else {
+                tasksPerCategory.put(category, 1);
+            }
+        }
+        return tasksPerCategory;
     }
 
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
         // TODO: Implement completion logic
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                task.isCompleted()
+                break;
+            }
+        }
     }
 
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
         // TODO: Implement bulk completion logic
+        for (Task task : tasks) {
+            if (task.getCategory().equals(category)) {
+                task.isCompleted()
+            }
+        }
     }
 }
 
